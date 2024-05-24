@@ -39,6 +39,11 @@ export const data = {
 
 export default function App() {
   const [selects, setSelects] = useState(new Array(8).fill(false));
+  const [chartres,setChartData] = useState([])
+
+  useEffect(() => {
+    handleButtonClick(0);
+  }, []);
 
   useEffect(() => {
     fetch(
@@ -77,6 +82,7 @@ export default function App() {
       <div className="mx-auto">
         <Line options={options} height={100} data={data} />
       </div>
+
     </div>
   );
 }
